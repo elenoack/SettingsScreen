@@ -15,7 +15,7 @@
 /* Begin PBXFileReference section */
 		0458D61B2844B6B600155A4B /* SettingsScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0458D61E2844B6B600155A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0458D6222844B6B600155A4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0458D6222844B6B600155A4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		0458D6272844B6BA00155A4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0458D62C2844B6BA00155A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				0458D6322844B6E800155A4B /* Application */,
+				0458D6552844C39300155A4B /* Extensions */,
 				0458D6342844B77E00155A4B /* Controlers */,
 				0458D6332844B75800155A4B /* Supporting Files */,
 			);
@@ -80,6 +81,13 @@
 				0458D6222844B6B600155A4B /* ViewController.swift */,
 			);
 			path = Controlers;
+			sourceTree = "<group>";
+		};
+		0458D6552844C39300155A4B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
