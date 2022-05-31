@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "siri_macos_bigsur_icon_189739.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
