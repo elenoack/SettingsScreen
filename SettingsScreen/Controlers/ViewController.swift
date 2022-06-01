@@ -198,7 +198,7 @@ extension ViewController: UITableViewDataSource {
                 cell.accessoryView = nil
                 cell.updateСircle.isHidden = false
                 cell.secondaryTextLabel.text = nil
-                cell.updateСircle.setTitle("\(Int.random(in: 1...2))", for: .normal)
+                cell.updateСircle.setTitle("\(Int.random(in: 2...8))", for: .normal)
             case 1...:
                 cell.accessoryType = .disclosureIndicator
                 cell.accessoryView = nil
@@ -213,7 +213,7 @@ extension ViewController: UITableViewDataSource {
                 cell.accessoryType = .disclosureIndicator
                 cell.accessoryView = nil
                 cell.updateСircle.isHidden = false
-                cell.updateСircle.setTitle("\(Int.random(in: 1...2))", for: .normal)
+                cell.updateСircle.setTitle("1", for: .normal)
                 cell.secondaryTextLabel.text = nil
             case 3, 4, 6:
                 cell.accessoryType = .disclosureIndicator
