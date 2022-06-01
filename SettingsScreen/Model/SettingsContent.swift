@@ -12,6 +12,7 @@ import UIKit
 struct SettingsContent {
     var name: String
     var symbol: UIImage?
+    var color: UIColor?
 }
 
 
