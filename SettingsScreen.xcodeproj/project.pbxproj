@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0458A90B28473D5E00127289 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458A90928473D5E00127289 /* UIView+Constraints.swift */; };
 		0458D61F2844B6B600155A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458D61E2844B6B600155A4B /* AppDelegate.swift */; };
 		0458D6232844B6B600155A4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458D6222844B6B600155A4B /* ViewController.swift */; };
 		0458D6282844B6BA00155A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0458D6272844B6BA00155A4B /* Assets.xcassets */; };
-		04DD5BF6284604870040271C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5BF5284604870040271C /* CustomCell.swift */; };
 		04DD5BFD2846575F0040271C /* SettingsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5BFC2846575F0040271C /* SettingsContent.swift */; };
+		04DD5BFF284676BD0040271C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD5BFE284676BD0040271C /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0458A90928473D5E00127289 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		0458D61B2844B6B600155A4B /* SettingsScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0458D61E2844B6B600155A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0458D6222844B6B600155A4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		0458D6272844B6BA00155A4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0458D62C2844B6BA00155A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04DD5BF5284604870040271C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		04DD5BFC2846575F0040271C /* SettingsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContent.swift; sourceTree = "<group>"; };
+		04DD5BFE284676BD0040271C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0458A90728473D5E00127289 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0458A90928473D5E00127289 /* UIView+Constraints.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0458D6122844B6B600155A4B = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		0458D61D2844B6B600155A4B /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				0458A90728473D5E00127289 /* Extensions */,
 				04DD5BFB284656760040271C /* Model */,
 				04DD5BF4284603F70040271C /* Cell */,
 				0458D6322844B6E800155A4B /* Application */,
@@ -91,7 +102,7 @@
 		04DD5BF4284603F70040271C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				04DD5BF5284604870040271C /* CustomCell.swift */,
+				04DD5BFE284676BD0040271C /* CustomCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -175,7 +186,8 @@
 			files = (
 				04DD5BFD2846575F0040271C /* SettingsContent.swift in Sources */,
 				0458D6232844B6B600155A4B /* ViewController.swift in Sources */,
-				04DD5BF6284604870040271C /* CustomCell.swift in Sources */,
+				0458A90B28473D5E00127289 /* UIView+Constraints.swift in Sources */,
+				04DD5BFF284676BD0040271C /* CustomCell.swift in Sources */,
 				0458D61F2844B6B600155A4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
