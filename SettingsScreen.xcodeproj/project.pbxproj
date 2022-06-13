@@ -64,12 +64,8 @@
 		0458D61D2844B6B600155A4B /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				0458A90728473D5E00127289 /* Extensions */,
-				04DD5BFB284656760040271C /* Model */,
-				04DD5BF4284603F70040271C /* Cell */,
-				0458D6322844B6E800155A4B /* Application */,
-				0458D6342844B77E00155A4B /* Controlers */,
-				0458D6332844B75800155A4B /* Supporting Files */,
+				0474056C285720F800DF74AF /* Sources */,
+				0474056D2857216500DF74AF /* Resources */,
 			);
 			path = SettingsScreen;
 			sourceTree = "<group>";
@@ -85,7 +81,6 @@
 		0458D6332844B75800155A4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0458D62C2844B6BA00155A4B /* Info.plist */,
 				0458D6272844B6BA00155A4B /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
@@ -97,6 +92,51 @@
 				0458D6222844B6B600155A4B /* ViewController.swift */,
 			);
 			path = Controlers;
+			sourceTree = "<group>";
+		};
+		0474056C285720F800DF74AF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0458A90728473D5E00127289 /* Extensions */,
+				0474056F2857243300DF74AF /* Scene */,
+				0458D6322844B6E800155A4B /* Application */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0474056D2857216500DF74AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0474056E2857225F00DF74AF /* Configuration */,
+				0458D6332844B75800155A4B /* Supporting Files */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0474056E2857225F00DF74AF /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0458D62C2844B6BA00155A4B /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		0474056F2857243300DF74AF /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				0458D6342844B77E00155A4B /* Controlers */,
+				047405702857244500DF74AF /* View */,
+				04DD5BFB284656760040271C /* Model */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		047405702857244500DF74AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DD5BF4284603F70040271C /* Cell */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		04DD5BF4284603F70040271C /* Cell */ = {
@@ -317,7 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SettingsScreen/Info.plist;
+				INFOPLIST_FILE = SettingsScreen/Resources/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = ViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -344,7 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SettingsScreen/Info.plist;
+				INFOPLIST_FILE = SettingsScreen/Resources/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = ViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
