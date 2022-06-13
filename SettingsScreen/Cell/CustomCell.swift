@@ -23,10 +23,10 @@ class CustomCell: UITableViewCell {
 
     // MARK: - Properties
     
-    public static let reuseID = "CustomCell"
+    static let reuseID = "CustomCell"
   
-    lazy var customImageView: UIImageView = {
-        let imageView = UIImageView()
+    lazy var customImageView: UIView = {
+        let imageView = UIView()
         imageView.layer.cornerRadius = Static.iconSize / 4
         imageView.layer.masksToBounds = true
         imageView.clipsToBounds = true
