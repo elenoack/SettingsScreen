@@ -147,14 +147,16 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseID,
-                                for: indexPath) as! CustomCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseID, for: indexPath) as? CustomCell else { return
+            UITableViewCell() }
         
         var configuration = cell.defaultContentConfiguration()
+        
+        let item = arraySettings[indexPath.section][indexPath.row]
        
-        cell.customIconView.image = arraySettings[indexPath.section][indexPath.row].symbol
-        cell.customImageView.backgroundColor = arraySettings[indexPath.section][indexPath.row].color
-        cell.nameLabel.text = arraySettings[indexPath.section][indexPath.row].name
+        cell.customIconView.image = item.symbol
+        cell.customImageView.backgroundColor = item.color
+        cell.nameLabel.text = item.name
         
         let switchView = UISwitch(frame: CGRect.zero)
         switchView.setOn(false, animated: false)
@@ -246,10 +248,6 @@ extension ViewController: UITableViewDataSource {
 //MARK: - TableViewDelegate
 
 extension ViewController {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return fixedSizeTable
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Нажата ячейка «\(arraySettings[indexPath.section][indexPath.row].name)»")
