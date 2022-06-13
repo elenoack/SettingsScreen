@@ -53,7 +53,7 @@ class CustomCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.textColor = .black
+        label.textColor = UIColor.init(named: "labelColor")
         label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 2
         return label
