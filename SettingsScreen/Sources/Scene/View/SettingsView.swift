@@ -23,7 +23,6 @@ final class SettingsView: UIView, UITableViewDelegate {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect.zero, style: .insetGrouped)
-        tableView.backgroundColor = .systemGray6
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.reuseID)
         tableView.delegate = self
@@ -44,7 +43,7 @@ final class SettingsView: UIView, UITableViewDelegate {
     }
     
     private func commonInit() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         setupTableView()
     }
     
