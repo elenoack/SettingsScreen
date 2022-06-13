@@ -8,6 +8,12 @@
 import UIKit
 
 final class SettingsView: UIView, UITableViewDelegate {
+    // MARK: - Configuration
+    
+    func configureView(with models: [[SettingsContent]]) {
+        self.models = models
+        tableView.reloadData()
+    }
     
     // MARK: - Properties
     
@@ -19,6 +25,7 @@ final class SettingsView: UIView, UITableViewDelegate {
         let tableView = UITableView.init(frame: CGRect.zero, style: .insetGrouped)
         tableView.backgroundColor = .systemGray6
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.reuseID)
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -44,8 +51,6 @@ final class SettingsView: UIView, UITableViewDelegate {
     // MARK: - Private
     
     func setupTableView() {
-        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.reuseID)
-        
         addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: topAnchor),
