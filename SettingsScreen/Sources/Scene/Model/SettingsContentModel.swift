@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsContentModel {
     
-    func createModels() -> [[SettingsContent]] {
+    func createModel() -> [[SettingsContent]] {
         return [
                 [SettingsContent(name: "Авиарежим", symbol: SymbolSetting.airplaneMode, color: .orange),
                  SettingsContent(name: "Wi-Fi", symbol: SymbolSetting.wiFi, color: .systemBlue),

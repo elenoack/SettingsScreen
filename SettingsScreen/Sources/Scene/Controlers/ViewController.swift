@@ -15,17 +15,14 @@ class ViewController: UIViewController, UITableViewDelegate {
         return view as? SettingsView
     }
     
-    public var model: [[SettingsContent]] = []
+    private lazy var model: [[SettingsContent]] = SettingsContentModel().createModel()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view = SettingsView()
-        model = SettingsContentModel().createModels()
-        settingsView?.tableView.delegate = self
-        settingsView?.tableView.dataSource = self
-        setupView()
+        setupNavigationController()
         configureView()
     }
 }
@@ -33,16 +30,52 @@ class ViewController: UIViewController, UITableViewDelegate {
 // MARK: - Private
 
 private extension ViewController {
-    
-    func setupView() {
+  
+    func setupNavigationController() {
         navigationItem.title = "Настройки"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func configureView() {
-        model.forEach { [unowned self] model in
-            settingsView?.configureView(with: [model])
+        settingsView?.tableView.delegate = self
+        settingsView?.tableView.dataSource = self
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension ViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return model.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return model[0].count
+        case 1:
+            return model[1].count
+        case 2:
+            return model[2].count
+        default:
+            return model[0].count
         }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item = model[indexPath.section][indexPath.row]
+        
+        let switchView = UISwitch(frame: CGRect.zero)
+        switchView.setOn(false, animated: false)
+        switchView.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
+        switchView.tag = indexPath.row
+        
+        guard let cell = settingsView?.getCell(for: model, indexPath, with: switchView) as? CustomCell else { return CustomCell() }
+        cell.configure(with: item)
+        
+        return cell
     }
 }
 
@@ -56,4 +89,14 @@ extension ViewController {
     }
 }
 
+// MARK: - Action
+
+extension ViewController {
+    
+    @objc
+    func switchChanged(__ sender: UISwitch) {
+        let indexPathRow = sender.tag
+        print("Нажата ячейка «\(model[0][indexPathRow].name)»")
+    }
+}
 

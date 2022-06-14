@@ -8,18 +8,7 @@
 import UIKit
 
 final class SettingsView: UIView {
-    // MARK: - Configuration
-    
-    func configureView(with models: [[SettingsContent]]) {
-        self.models = models
-        tableView.reloadData()
-    }
-    
     // MARK: - Properties
-    
-    private var models = [[SettingsContent]]()
-    
-    // MARK: - Views
     
     lazy var tableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect.zero, style: .insetGrouped)
@@ -28,7 +17,7 @@ final class SettingsView: UIView {
         return tableView
     }()
     
-    // MARK: - Initial
+    // MARK: - Initializacion
     
     init() {
         super.init(frame: .zero)
@@ -56,5 +45,94 @@ final class SettingsView: UIView {
             tableView.rightAnchor.constraint(equalTo: rightAnchor),
         ])
     }
+    
+    func getCell(for model: [[SettingsContent]],_ indexPath: IndexPath, with switchView: UISwitch) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseID, for: indexPath) as? CustomCell else { return
+            CustomCell() }
+        
+        var configuration = cell.defaultContentConfiguration()
+        
+        switch indexPath.section {
+            
+        case 0:
+            switch indexPath.row {
+            case 0:
+                cell.accessoryView = switchView
+                cell.updateСircle.isHidden = true
+                cell.secondaryTextLabel.text = nil
+            case 1:
+                cell.accessoryType = .disclosureIndicator
+                cell.accessoryView = nil
+                cell.updateСircle.isHidden = true
+                cell.secondaryTextLabel.text = "Не подключено"
+            case 2:
+                cell.accessoryType = .disclosureIndicator
+                cell.secondaryTextLabel.text = "Вкл."
+                cell.accessoryView = nil
+                cell.updateСircle.isHidden = true
+            case 3, 4:
+                cell.accessoryType = .disclosureIndicator
+                cell.accessoryView = nil
+                cell.updateСircle.isHidden = true
+                cell.secondaryTextLabel.text = nil
+            case 5:
+                cell.accessoryView = switchView
+                cell.updateСircle.isHidden = true
+                cell.secondaryTextLabel.text = nil
+            default: configuration.image = nil
+            }
+            
+        case 1:
+            switch indexPath.row {
+            case 0:
+                cell.accessoryType = .disclosureIndicator
+                cell.accessoryView = nil
+                cell.updateСircle.isHidden = false
+                cell.secondaryTextLabel.text = nil
+                cell.updateСircle.setTitle("\(Int.random(in: 2...8))", for: .normal)
+            case 1...:
+                cell.accessoryType = .disclosureIndicator
+                cell.accessoryView = nil
+                cell.updateСircle.isHidden = true
+                cell.secondaryTextLabel.text = nil
+            default:  configuration.image = nil
+            }
+            
+        case 2:
+            switch indexPath.row {
+            case 0:
+                cell.accessoryType = .disclosureIndicator
+                cell.accessoryView = nil
+                cell.updateСircle.isHidden = false
+                cell.updateСircle.setTitle("1", for: .normal)
+                cell.secondaryTextLabel.text = nil
+            case 3, 4, 6:
+                cell.accessoryType = .disclosureIndicator
+                cell.accessoryView = nil
+                cell.updateСircle.isHidden = true
+                cell.secondaryTextLabel.text = nil
+            case 1, 2, 5, 7, 8, 10, 11:
+                cell.accessoryType = .disclosureIndicator
+                cell.accessoryView = nil
+                cell.updateСircle.isHidden = true
+                cell.secondaryTextLabel.text = nil
+            case 9:
+                cell.accessoryType = .disclosureIndicator
+                cell.customImageView.layer.borderWidth = 0.1
+                cell.customImageView.layer.borderColor = UIColor.black.cgColor
+                cell.accessoryView = nil
+                cell.secondaryTextLabel.text = nil
+                cell.updateСircle.isHidden = true
+            default:  configuration.image = nil
+            }
+            
+        default: break
+        }
+        
+        cell.contentConfiguration = configuration
+        return cell
+    }
 }
+
 

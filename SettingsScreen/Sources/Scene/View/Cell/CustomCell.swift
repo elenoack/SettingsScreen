@@ -20,11 +20,11 @@ class CustomCell: UITableViewCell {
         static let circleSize: CGFloat = 24
         static let iconAssetWidht: CGFloat = 28
     }
-
+    
     // MARK: - Properties
     
     static let reuseID = "CustomCell"
-  
+    
     lazy var customImageView: UIView = {
         let imageView = UIView()
         imageView.layer.cornerRadius = Static.iconSize / 4
@@ -66,13 +66,13 @@ class CustomCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
- 
+    
     
     // MARK: - Initialization
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-  
+        
         addSubviewsForAutoLayout([
             customImageView,
             updateСircle,
@@ -82,31 +82,44 @@ class CustomCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-        customImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-        customImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Static.iconIndent),
-        customImageView.heightAnchor.constraint(equalToConstant: Static.iconSize),
-        customImageView.widthAnchor.constraint(equalToConstant: Static.iconSize),
-    
-        updateСircle.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-        updateСircle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Static.circleIndent),
-        updateСircle.heightAnchor.constraint(equalToConstant: Static.circleSize),
-        updateСircle.widthAnchor.constraint(equalToConstant: Static.circleSize),
-   
-        nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-        nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Static.textIndent),
-        nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Static.textRightIndenText),
-     
-        secondaryTextLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-        secondaryTextLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Static.secondaryTextIndent),
-        
-        customIconView.centerYAnchor.constraint(equalTo: customImageView.centerYAnchor),
-        customIconView.centerXAnchor.constraint(equalTo: customImageView.centerXAnchor),
-        customIconView.widthAnchor.constraint(equalToConstant: Static.iconAssetWidht),
+            customImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            customImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Static.iconIndent),
+            customImageView.heightAnchor.constraint(equalToConstant: Static.iconSize),
+            customImageView.widthAnchor.constraint(equalToConstant: Static.iconSize),
+            
+            updateСircle.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            updateСircle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Static.circleIndent),
+            updateСircle.heightAnchor.constraint(equalToConstant: Static.circleSize),
+            updateСircle.widthAnchor.constraint(equalToConstant: Static.circleSize),
+            
+            nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Static.textIndent),
+            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Static.textRightIndenText),
+            
+            secondaryTextLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            secondaryTextLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Static.secondaryTextIndent),
+            
+            customIconView.centerYAnchor.constraint(equalTo: customImageView.centerYAnchor),
+            customIconView.centerXAnchor.constraint(equalTo: customImageView.centerXAnchor),
+            customIconView.widthAnchor.constraint(equalToConstant: Static.iconAssetWidht),
         ])
     }
-         
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with model: SettingsContent) {
+        customIconView.image = model.symbol
+        customImageView.backgroundColor = model.color
+        nameLabel.text = model.name
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        customIconView.image = nil
+        customImageView.backgroundColor = nil
+        nameLabel.text = nil
     }
 }
 
