@@ -17,7 +17,7 @@ final class SettingsView: UIView {
         return tableView
     }()
     
-    // MARK: - Initializacion
+    // MARK: - Initialization
     
     init() {
         super.init(frame: .zero)

@@ -109,6 +109,8 @@ class CustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Сonfiguration
+    
     func configure(with model: SettingsContent) {
         customIconView.image = model.symbol
         customImageView.backgroundColor = model.color
